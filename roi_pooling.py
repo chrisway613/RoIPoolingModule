@@ -53,7 +53,7 @@ class RoIPooling2D(nn.Module):
                 y_end = np.clip(y_end, 0, H - 1)
 
                 for j in range(self.pooled_width):
-                    x_start = bbox[0] + int(np.float(j * bin_w))
+                    x_start = bbox[0] + int(np.floor(j * bin_w))
                     x_end = bbox[0] + int(np.ceil((j + 1) * bin_w))
                     #                     print("x_start:", x_start)
                     #                     print("x_end:", x_end)
